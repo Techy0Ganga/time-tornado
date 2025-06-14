@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Screen Time Tracker - Alter Ego</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="tracker-styles.css">
+</head>
+<body>
+    <div class="tracker-container">
+        <!-- Header -->
+        <header class="tracker-header">
+            <div class="header-left">
+                <button class="back-btn" onclick="window.location.href='index.html'">
+                    ← Back to Dashboard
+                </button>
+            </div>
+            <h1 class="tracker-title">
+                <span class="glow">📱 SCREEN TIME</span>
+                <span class="tracker-subtitle">Digital Wellness Tracker</span>
+            </h1>
+            <div class="header-right">
+                <div class="current-date" id="current-date"></div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="tracker-main">
+            <!-- Quick Stats Overview -->
+            <section class="quick-stats">
+                <div class="stat-card primary">
+                    <div class="stat-icon">⏱️</div>
+                    <div class="stat-info">
+                        <h3>Today's Screen Time</h3>
+                        <div class="stat-value" id="today-screen-time">0h 0m</div>
+                    </div>
+                </div>
+                <div class="stat-card secondary">
+                    <div class="stat-icon">📊</div>
+                    <div class="stat-info">
+                        <h3>Weekly Average</h3>
+                        <div class="stat-value" id="weekly-average">0h 0m</div>
+                    </div>
+                </div>
+                <div class="stat-card tertiary">
+                    <div class="stat-icon">🎯</div>
+                    <div class="stat-info">
+                        <h3>Daily Goal</h3>
+                        <div class="stat-value" id="daily-goal">6h 0m</div>
+                    </div>
+                </div>
+                <div class="stat-card quaternary">
+                    <div class="stat-icon">🔥</div>
+                    <div class="stat-info">
+                        <h3>Streak</h3>
+                        <div class="stat-value" id="goal-streak">0 days</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Charts Section -->
+            <section class="charts-section">
+                <div class="chart-grid">
+                    <!-- Weekly Trend Chart -->
+                    <div class="chart-panel">
+                        <div class="chart-header">
+                            <h2>📈 Weekly Trend</h2>
+                            <div class="chart-controls">
+                                <button class="chart-btn active" data-period="week">Week</button>
+                                <button class="chart-btn" data-period="month">Month</button>
+                            </div>
+                        </div>
+                        <div class="chart-wrapper">
+                          <div class="line-chart">
+                            <div class="chart-title">Weekly Screen Time</div>
+                            <div class="line-chart-container">
+                              <div class="chart-line">
+                                <div class="data-point" style="bottom: 30%; left: 10%;"></div>
+                                <div class="data-point" style="bottom: 45%; left: 25%;"></div>
+                                <div class="data-point" style="bottom: 60%; left: 40%;"></div>
+                                <div class="data-point" style="bottom: 40%; left: 55%;"></div>
+                                <div class="data-point" style="bottom: 70%; left: 70%;"></div>
+                                <div class="data-point" style="bottom: 55%; left: 85%;"></div>
+                              </div>
+                            </div>
+                            <div class="chart-labels">
+                              <span>Mon</span>
+                              <span>Tue</span>
+                              <span>Wed</span>
+                              <span>Thu</span>
+                              <span>Fri</span>
+                              <span>Sat</span>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+
+                    <!-- App Usage Breakdown -->
+                    <div class="chart-panel">
+                        <div class="chart-header">
+                            <h2>📱 App Breakdown</h2>
+                            <div class="chart-controls">
+                                <button class="chart-btn active" data-view="today">Today</button>
+                                <button class="chart-btn" data-view="week">Week</button>
+                            </div>
+                        </div>
+                        <div class="chart-wrapper">
+                          <div class="donut-chart">
+                            <div class="chart-title">App Usage</div>
+                            <div class="donut-container">
+                              <div class="donut-segment social" style="--percentage: 35;"></div>
+                              <div class="donut-segment work" style="--percentage: 25;"></div>
+                              <div class="donut-segment entertainment" style="--percentage: 20;"></div>
+                              <div class="donut-segment other" style="--percentage: 20;"></div>
+                            </div>
+                            <div class="donut-legend">
+                              <div class="legend-item"><span class="legend-color social"></span>Social</div>
+                              <div class="legend-item"><span class="legend-color work"></span>Work</div>
+                              <div class="legend-item"><span class="legend-color entertainment"></span>Entertainment</div>
+                              <div class="legend-item"><span class="legend-color other"></span>Other</div>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Manual Time Entry -->
+            <section class="time-entry-section">
+                <div class="entry-panel">
+                    <div class="panel-header">
+                        <h2>⏰ Log Screen Time</h2>
+                        <p>Manually track your digital device usage</p>
+                    </div>
+                    
+                    <div class="entry-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="app-select">App/Platform</label>
+                                <select id="app-select" class="form-input">
+                                    <option value="">Select an app...</option>
+                                    <option value="social">📱 Social Media</option>
+                                    <option value="work">💼 Work/Productivity</option>
+                                    <option value="entertainment">🎬 Entertainment</option>
+                                    <option value="gaming">🎮 Gaming</option>
+                                    <option value="education">📚 Education</option>
+                                    <option value="communication">💬 Communication</option>
+                                    <option value="other">🔧 Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="time-input">Time Spent</label>
+                                <div class="time-input-group">
+                                    <input type="number" id="hours-input" class="time-input" placeholder="0" min="0" max="23">
+                                    <span class="time-label">h</span>
+                                    <input type="number" id="minutes-input" class="time-input" placeholder="0" min="0" max="59">
+                                    <span class="time-label">m</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group full-width">
+                                <label for="activity-note">Activity Note (Optional)</label>
+                                <input type="text" id="activity-note" class="form-input" placeholder="What were you doing?">
+                            </div>
+                        </div>
+                        
+                        <button class="log-btn" id="log-time-btn">
+                            <span class="btn-icon">📝</span>
+                            Log Time
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Future Message Section -->
+            <section class="future-message-section">
+                <div class="message-panel">
+                    <div class="panel-header">
+                        <h2>💌 Message to Future You</h2>
+                        <p>Send encouragement or insights to yourself based on your screen time patterns</p>
+                    </div>
+                    
+                    <div class="message-composer">
+                        <div class="composer-header">
+                            <div class="delivery-options">
+                                <label class="delivery-option">
+                                    <input type="radio" name="delivery" value="tomorrow" checked>
+                                    <span class="radio-custom"></span>
+                                    Tomorrow
+                                </label>
+                                <label class="delivery-option">
+                                    <input type="radio" name="delivery" value="week">
+                                    <span class="radio-custom"></span>
+                                    Next Week
+                                </label>
+                                <label class="delivery-option">
+                                    <input type="radio" name="delivery" value="month">
+                                    <span class="radio-custom"></span>
+                                    Next Month
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <textarea 
+                            id="future-message" 
+                            class="message-textarea" 
+                            placeholder="Write a message to your future self about your digital habits, goals, or insights..."
+                            maxlength="1000"
+                        ></textarea>
+                        
+                        <div class="composer-footer">
+                            <div class="message-info">
+                                <span id="message-char-count">0/1000</span>
+                                <span id="delivery-date">Delivers: Tomorrow</span>
+                            </div>
+                            <button class="send-btn" id="send-message-btn">
+                                <span class="btn-icon">🚀</span>
+                                Send to Future
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Recent Activity Log -->
+            <section class="activity-log-section">
+                <div class="log-panel">
+                    <div class="panel-header">
+                        <h2>📋 Recent Activity</h2>
+                        <button class="clear-btn" id="clear-log-btn">Clear All</button>
+                    </div>
+                    <div class="activity-list" id="activity-list">
+                        <div class="empty-state">
+                            <div class="empty-icon">📱</div>
+                            <p>No screen time logged yet</p>
+                            <small>Start tracking your digital habits above</small>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Future Messages Inbox -->
+            <section class="messages-inbox-section">
+                <div class="inbox-panel">
+                    <div class="panel-header">
+                        <h2>📬 Messages from Past You</h2>
+                        <div class="inbox-stats">
+                            <span id="unread-count">0 unread</span>
+                        </div>
+                    </div>
+                    <div class="messages-list" id="messages-list">
+                        <div class="empty-state">
+                            <div class="empty-icon">💌</div>
+                            <p>No messages yet</p>
+                            <small>Send yourself a message above to get started</small>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="screen-time-tracker.js"></script>
+</body>
+</html>

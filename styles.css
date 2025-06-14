@@ -431,11 +431,52 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 20px;
 }
 
 .chart-placeholder {
   text-align: center;
   padding: 20px;
+  width: 100%;
+}
+
+.chart-title {
+  color: var(--neon-cyan);
+  font-family: "Orbitron", monospace;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  text-shadow: 0 0 5px var(--neon-cyan);
+}
+
+.chart-bars {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  gap: 15px;
+  height: 120px;
+  margin-bottom: 15px;
+}
+
+.bar {
+  width: 25px;
+  background: linear-gradient(to top, var(--neon-purple), var(--neon-cyan));
+  border-radius: 3px 3px 0 0;
+  animation: bar-grow 2s ease-in-out infinite alternate;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+}
+
+.chart-labels {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  font-family: "Fira Code", monospace;
+}
+
+.chart-labels span {
+  min-width: 25px;
+  text-align: center;
 }
 
 .chart-bars {
@@ -645,4 +686,91 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--neon-purple);
+}
+
+/* Header Navigation */
+.header-nav {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.nav-link {
+  padding: 8px 16px;
+  background: var(--accent-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.nav-link:hover {
+  background: var(--neon-cyan);
+  color: var(--primary-bg);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 255, 255, 0.3);
+}
+
+/* Chart container updates */
+.chart-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.chart-placeholder {
+  text-align: center;
+  padding: 20px;
+  width: 100%;
+}
+
+.chart-title {
+  color: var(--neon-cyan);
+  font-family: "Orbitron", monospace;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  text-shadow: 0 0 5px var(--neon-cyan);
+}
+
+.chart-bars {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  gap: 15px;
+  height: 120px;
+  margin-bottom: 15px;
+}
+
+.bar {
+  width: 25px;
+  background: linear-gradient(to top, var(--neon-purple), var(--neon-cyan));
+  border-radius: 3px 3px 0 0;
+  animation: bar-grow 2s ease-in-out infinite alternate;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+}
+
+.chart-labels {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  font-family: "Fira Code", monospace;
+}
+
+.chart-labels span {
+  min-width: 25px;
+  text-align: center;
+}
+
+#focus-chart {
+  max-width: 100%;
+  height: auto;
 }

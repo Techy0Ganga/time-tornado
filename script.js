@@ -42,6 +42,7 @@ class AlterEgo {
 
     // Initialize the interface
     this.updateUI()
+    this.initializeFocusChart()
     this.addPersonaMessage("System online. Ready to boost your productivity! 🚀")
 
     // Timer interval reference
@@ -173,6 +174,25 @@ class AlterEgo {
     this.capsuleContent = document.getElementById("capsule-content")
     this.charCount = document.getElementById("char-count")
     this.lastSaved = document.getElementById("last-saved")
+  }
+
+  /**
+   * Initialize focus chart with CSS animations
+   */
+  initializeFocusChart() {
+    // Simple CSS-based chart - no Chart.js needed
+    const chartBars = document.querySelectorAll(".bar")
+
+    // Animate bars with random heights based on user stats
+    chartBars.forEach((bar, index) => {
+      const baseHeight = Math.max(30, this.state.user.totalTime / Math.max(this.state.user.totalSessions, 1))
+      const variation = (Math.random() - 0.5) * 40
+      const height = Math.max(20, Math.min(100, baseHeight + variation))
+
+      setTimeout(() => {
+        bar.style.height = `${height}px`
+      }, index * 200)
+    })
   }
 
   /**

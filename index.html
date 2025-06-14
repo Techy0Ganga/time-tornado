@@ -22,6 +22,9 @@
               <button class="nav-link" onclick="window.location.href='create-alter-ego.html'">
                 ⚙️ Customize Alter Ego
               </button>
+              <button class="nav-link" onclick="window.location.href='screen-time-tracker.html'">
+                📱 Screen Time Tracker
+              </button>
             </div>
         </header>
 
@@ -117,17 +120,23 @@
                     <h2>📊 Neural Analytics</h2>
                 </div>
                 <div class="chart-container">
-                    <canvas id="focus-chart" width="300" height="200"></canvas>
-                    <div class="chart-placeholder">
-                        <div class="chart-bars">
-                            <div class="bar" style="height: 60%"></div>
-                            <div class="bar" style="height: 80%"></div>
-                            <div class="bar" style="height: 40%"></div>
-                            <div class="bar" style="height: 90%"></div>
-                            <div class="bar" style="height: 70%"></div>
-                        </div>
-                        <p>Focus patterns visualization (Chart.js integration ready)</p>
+                  <div class="chart-placeholder">
+                    <div class="chart-title">Focus Analytics</div>
+                    <div class="chart-bars">
+                      <div class="bar" style="height: 60px;"></div>
+                      <div class="bar" style="height: 80px;"></div>
+                      <div class="bar" style="height: 45px;"></div>
+                      <div class="bar" style="height: 90px;"></div>
+                      <div class="bar" style="height: 70px;"></div>
                     </div>
+                    <div class="chart-labels">
+                      <span>Mon</span>
+                      <span>Tue</span>
+                      <span>Wed</span>
+                      <span>Thu</span>
+                      <span>Fri</span>
+                    </div>
+                  </div>
                 </div>
             </section>
         </main>
