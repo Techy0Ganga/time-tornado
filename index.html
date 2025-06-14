@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alter Ego - Productivity Assistant</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1 class="title">
+                <span class="glow">ALTER EGO</span>
+                <span class="subtitle">Productivity Twin</span>
+            </h1>
+            <div class="user-info">
+                <span id="user-level" class="level-badge">Level 1 ⭐</span>
+                <span id="user-xp" class="xp-badge">XP: 0/100</span>
+            </div>
+            <div class="header-nav">
+              <button class="nav-link" onclick="window.location.href='create-alter-ego.html'">
+                ⚙️ Customize Alter Ego
+              </button>
+            </div>
+        </header>
+
+        <!-- Main Grid Layout -->
+        <main class="main-grid">
+            <!-- Alter Ego Persona Interface -->
+            <section class="persona-panel">
+                <div class="persona-header">
+                    <h2>🧠 Shadow Console</h2>
+                    <div class="persona-status" id="persona-status">ACTIVE</div>
+                </div>
+                <div class="persona-avatar" id="persona-avatar">
+                    <div class="avatar-face">👤</div>
+                    <div class="avatar-glow"></div>
+                </div>
+                <div class="persona-messages" id="persona-messages">
+                    <div class="message shadow-message">
+                        <span class="timestamp">[INIT]</span>
+                        I'm Shadow, your productivity twin. Ready to level up? Type <span class="command-highlight">/help</span> to begin.
+                    </div>
+                </div>
+            </section>
+
+            <!-- Focus Command Console -->
+            <section class="command-console">
+                <div class="console-header">
+                    <h2>🎯 Command Console</h2>
+                    <div class="console-status" id="session-status">IDLE</div>
+                </div>
+                <div class="console-output" id="console-output">
+                    <div class="output-line">
+                        <span class="prompt">shadow@productivity:~$</span> System initialized. Awaiting commands...
+                    </div>
+                </div>
+                <div class="console-input-container">
+                    <span class="prompt">shadow@productivity:~$</span>
+                    <input type="text" id="command-input" class="console-input" placeholder="Enter command..." autocomplete="off">
+                </div>
+            </section>
+
+            <!-- XP & Leveling System -->
+            <section class="xp-panel">
+                <div class="panel-header">
+                    <h2>🎮 Progress Matrix</h2>
+                </div>
+                <div class="xp-display">
+                    <div class="xp-bar-container">
+                        <div class="xp-bar" id="xp-bar"></div>
+                        <div class="xp-text" id="xp-text">0 / 100 XP</div>
+                    </div>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-label">Sessions</span>
+                            <span class="stat-value" id="total-sessions">0</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Time Logged</span>
+                            <span class="stat-value" id="total-time">0m</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Streak</span>
+                            <span class="stat-value" id="streak">0</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Time Capsule Journal -->
+            <section class="journal-panel">
+                <div class="panel-header">
+                    <h2>📦 Time Capsule</h2>
+                    <button class="save-btn" id="save-capsule">SAVE</button>
+                </div>
+                <textarea 
+                    id="capsule-input" 
+                    class="capsule-textarea" 
+                    placeholder="Write a note to your future self..."
+                    maxlength="500"
+                ></textarea>
+                <div class="capsule-info">
+                    <span id="char-count">0/500</span>
+                    <span id="last-saved">Never saved</span>
+                </div>
+                <div class="current-capsule" id="current-capsule">
+                    <h3>Current Capsule:</h3>
+                    <p id="capsule-content">No capsule saved yet.</p>
+                </div>
+            </section>
+
+            <!-- Focus Stats -->
+            <section class="stats-panel">
+                <div class="panel-header">
+                    <h2>📊 Neural Analytics</h2>
+                </div>
+                <div class="chart-container">
+                    <canvas id="focus-chart" width="300" height="200"></canvas>
+                    <div class="chart-placeholder">
+                        <div class="chart-bars">
+                            <div class="bar" style="height: 60%"></div>
+                            <div class="bar" style="height: 80%"></div>
+                            <div class="bar" style="height: 40%"></div>
+                            <div class="bar" style="height: 90%"></div>
+                            <div class="bar" style="height: 70%"></div>
+                        </div>
+                        <p>Focus patterns visualization (Chart.js integration ready)</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Timer Display (Hidden by default) -->
+        <div class="timer-overlay" id="timer-overlay">
+            <div class="timer-display">
+                <div class="timer-text" id="timer-text">00:00</div>
+                <div class="timer-controls">
+                    <button class="timer-btn" id="pause-timer">PAUSE</button>
+                    <button class="timer-btn danger" id="stop-timer">STOP</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

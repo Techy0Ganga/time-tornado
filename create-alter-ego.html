@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Your Alter Ego - Productivity Twin</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="creation-styles.css">
+</head>
+<body class="creation-body">
+    <div class="creation-container">
+        <!-- Header -->
+        <header class="creation-header">
+            <h1 class="creation-title">
+                <span class="glow">ALTER EGO</span>
+                <span class="creation-subtitle">Create Your Productivity Twin</span>
+            </h1>
+        </header>
+
+        <!-- Creation Form -->
+        <main class="creation-main">
+            <div class="creation-card">
+                <div class="creation-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill"></div>
+                    </div>
+                    <span class="progress-text" id="progress-text">Step 1 of 3</span>
+                </div>
+
+                <!-- Step 1: Name Selection -->
+                <div class="creation-step active" id="step-1">
+                    <div class="step-header">
+                        <h2>🧠 Name Your Alter Ego</h2>
+                        <p>Choose a name that embodies your productive self</p>
+                    </div>
+                    
+                    <div class="name-input-section">
+                        <label for="alter-ego-name" class="input-label">Alter Ego Name</label>
+                        <input 
+                            type="text" 
+                            id="alter-ego-name" 
+                            class="name-input" 
+                            placeholder="Enter a powerful name..."
+                            maxlength="20"
+                        >
+                        <div class="name-suggestions">
+                            <p>Need inspiration? Try these:</p>
+                            <div class="suggestion-chips">
+                                <button class="suggestion-chip" data-name="Shadow">Shadow</button>
+                                <button class="suggestion-chip" data-name="Phoenix">Phoenix</button>
+                                <button class="suggestion-chip" data-name="Titan">Titan</button>
+                                <button class="suggestion-chip" data-name="Nova">Nova</button>
+                                <button class="suggestion-chip" data-name="Cipher">Cipher</button>
+                                <button class="suggestion-chip" data-name="Apex">Apex</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2: Personality Type -->
+                <div class="creation-step" id="step-2">
+                    <div class="step-header">
+                        <h2>⚡ Choose Your Personality</h2>
+                        <p>Select the personality that will motivate you best</p>
+                    </div>
+                    
+                    <div class="personality-grid">
+                        <div class="personality-card" data-type="motivator">
+                            <div class="personality-icon">💪</div>
+                            <h3>The Motivator</h3>
+                            <p>Encouraging, supportive, and always cheering you on</p>
+                            <div class="personality-traits">
+                                <span class="trait">Encouraging</span>
+                                <span class="trait">Supportive</span>
+                                <span class="trait">Positive</span>
+                            </div>
+                        </div>
+
+                        <div class="personality-card" data-type="challenger">
+                            <div class="personality-icon">🔥</div>
+                            <h3>The Challenger</h3>
+                            <p>Direct, intense, and pushes you to exceed limits</p>
+                            <div class="personality-traits">
+                                <span class="trait">Direct</span>
+                                <span class="trait">Intense</span>
+                                <span class="trait">Demanding</span>
+                            </div>
+                        </div>
+
+                        <div class="personality-card" data-type="strategist">
+                            <div class="personality-icon">🧠</div>
+                            <h3>The Strategist</h3>
+                            <p>Analytical, logical, and focuses on optimization</p>
+                            <div class="personality-traits">
+                                <span class="trait">Analytical</span>
+                                <span class="trait">Logical</span>
+                                <span class="trait">Efficient</span>
+                            </div>
+                        </div>
+
+                        <div class="personality-card" data-type="sage">
+                            <div class="personality-icon">🌟</div>
+                            <h3>The Sage</h3>
+                            <p>Wise, philosophical, and provides deep insights</p>
+                            <div class="personality-traits">
+                                <span class="trait">Wise</span>
+                                <span class="trait">Thoughtful</span>
+                                <span class="trait">Insightful</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3: Customization -->
+                <div class="creation-step" id="step-3">
+                    <div class="step-header">
+                        <h2>🎨 Customize Your Twin</h2>
+                        <p>Fine-tune your alter ego's appearance and behavior</p>
+                    </div>
+                    
+                    <div class="customization-section">
+                        <div class="custom-option">
+                            <label class="option-label">Avatar Style</label>
+                            <div class="avatar-options">
+                                <button class="avatar-option active" data-avatar="👤">👤</button>
+                                <button class="avatar-option" data-avatar="🤖">🤖</button>
+                                <button class="avatar-option" data-avatar="👁️">👁️</button>
+                                <button class="avatar-option" data-avatar="⚡">⚡</button>
+                                <button class="avatar-option" data-avatar="🔮">🔮</button>
+                                <button class="avatar-option" data-avatar="🎯">🎯</button>
+                            </div>
+                        </div>
+
+                        <div class="custom-option">
+                            <label class="option-label">Communication Style</label>
+                            <div class="style-options">
+                                <label class="style-option">
+                                    <input type="radio" name="communication" value="casual" checked>
+                                    <span class="radio-custom"></span>
+                                    Casual & Friendly
+                                </label>
+                                <label class="style-option">
+                                    <input type="radio" name="communication" value="professional">
+                                    <span class="radio-custom"></span>
+                                    Professional & Formal
+                                </label>
+                                <label class="style-option">
+                                    <input type="radio" name="communication" value="witty">
+                                    <span class="radio-custom"></span>
+                                    Witty & Sarcastic
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="custom-option">
+                            <label class="option-label">Focus Areas</label>
+                            <div class="focus-tags">
+                                <button class="focus-tag" data-focus="work">💼 Work</button>
+                                <button class="focus-tag" data-focus="study">📚 Study</button>
+                                <button class="focus-tag" data-focus="creative">🎨 Creative</button>
+                                <button class="focus-tag" data-focus="fitness">💪 Fitness</button>
+                                <button class="focus-tag" data-focus="personal">🌱 Personal</button>
+                                <button class="focus-tag" data-focus="coding">💻 Coding</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Preview Section -->
+                <div class="alter-ego-preview" id="alter-ego-preview">
+                    <div class="preview-header">
+                        <h3>Preview Your Alter Ego</h3>
+                    </div>
+                    <div class="preview-card">
+                        <div class="preview-avatar" id="preview-avatar">👤</div>
+                        <div class="preview-info">
+                            <h4 id="preview-name">Your Alter Ego</h4>
+                            <p id="preview-type">Select a personality type</p>
+                            <div class="preview-message" id="preview-message">
+                                Ready to create your productivity twin?
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation Buttons -->
+                <div class="creation-nav">
+                    <button class="nav-btn secondary" id="back-btn" disabled>Back</button>
+                    <button class="nav-btn primary" id="next-btn">Next</button>
+                    <button class="nav-btn success" id="create-btn" style="display: none;">Create Alter Ego</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="alter-ego-creation.js"></script>
+</body>
+</html>
