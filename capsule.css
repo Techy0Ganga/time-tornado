@@ -1,0 +1,76 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body, html {
+  height: 100%;
+  width: 100%;
+}
+
+.background-container {
+  background-image: url('cap.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  border: 2px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.report-box {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 40px;
+  border-radius: 20px;
+  width: 80%;
+  max-width: 700px;
+  color: #ffffff;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.report-box h1 {
+  font-size: 3em;
+  margin-bottom: 10px;
+  color: #00d4ff;
+}
+
+.report-box p {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+  color: #dddddd;
+}
+
+.meter-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.meter-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1em;
+  margin-bottom: 5px;
+}
+
+.meter-bar {
+  background-color: #444;
+  border-radius: 10px;
+  height: 20px;
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  width: 0;
+  background-color: #00ff8c;
+  transition: width 1s ease-in-out;
+}
+
+.red-fill {
+  background-color: #ff5757;
+}
